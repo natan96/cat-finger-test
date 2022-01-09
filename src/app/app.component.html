@@ -341,10 +341,10 @@
       </ng-select>
     </div>
     <div class="col-md-12 mt-4">
-      <h4 class="text-center">Gatos da pesquisa</h4>
+      <h4 class="text-center" *ngIf="cats?.length">Gatos da pesquisa</h4>
     </div>
     <div class="col-md-4 mb-4" *ngFor="let cat of cats">
-      <img [id]="cat?.id" class="img-cat" src="https://i.pinimg.com/474x/f5/dd/c6/f5ddc690ab0783246299f9045bb2dec4.jpg" alt="Gato" (click)="openModal(modalCat, cat)">
+      <img [id]="cat?.id" class="img-cat" src="https://cataas.com/cat/{{cat?.id}}" (click)="openModal(modalCat, cat)">
     </div>
   </div>
 
@@ -353,14 +353,14 @@
 <ng-template #modalCat let-modal>
   <div class="modal-header">
     <h4 class="modal-title">Visualizar imagem</h4>
-    <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
+    <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click'); catModal = null">
       <span aria-hidden="true">&times;</span>
     </button>
   </div>
-  <div class="modal-body">
-    <img [id]="'modal-' + catModal?.id" src="https://i.pinimg.com/474x/f5/dd/c6/f5ddc690ab0783246299f9045bb2dec4.jpg" alt="Gato">
+  <div class="modal-body row justify-content-center">
+    <img *ngIf="catModal" id="modal-{{catModal.id}}" src="https://cataas.com/cat/{{catModal.id}}">
   </div>
   <div class="modal-footer">
-    <button type="button" class="btn btn-outline-dark" (click)="modal.close('Close click')">Fechar</button>
+    <button type="button" class="btn btn-outline-dark" (click)="modal.close('Close click'); catModal = null">Fechar</button>
   </div>
 </ng-template>
