@@ -43,7 +43,6 @@ export class AppComponent {
 
   openModal(content: any, cat: any) {
     this.catModal = cat;
-    console.log('catModal ->', this.catModal);
     this.modalService.open(content, { size: 'xl', centered: true});
   }
 

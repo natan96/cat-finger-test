@@ -1,12 +1,3 @@
-<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
-<!-- * * * * * * * * * * * The content below * * * * * * * * * * * -->
-<!-- * * * * * * * * * * is only a placeholder * * * * * * * * * * -->
-<!-- * * * * * * * * * * and can be replaced. * * * * * * * * * * * -->
-<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
-<!-- * * * * * * * * * Delete the template below * * * * * * * * * * -->
-<!-- * * * * * * * to get started with your project! * * * * * * * * -->
-<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
-
 <style>
   :host {
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
@@ -343,7 +334,7 @@
     <div class="col-md-12 mt-4">
       <h4 class="text-center" *ngIf="cats?.length">Gatos da pesquisa</h4>
     </div>
-    <div class="col-md-4 mb-4" *ngFor="let cat of cats">
+    <div class="col-md-2 mb-4" *ngFor="let cat of cats">
       <img [id]="cat?.id" class="img-cat" src="https://cataas.com/cat/{{cat?.id}}" (click)="openModal(modalCat, cat)">
     </div>
   </div>
